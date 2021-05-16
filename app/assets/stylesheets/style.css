@@ -33,3 +33,16 @@ header {
 .content_post {
   text-align: center;
 }
+
+.container_box {
+text-align: center;
+}
+
+.container {
+  margin: auto;
+  display: block;
+}
+
+.contents {
+  text-align: center;
+}
