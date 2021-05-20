@@ -1,10 +1,13 @@
 <div class="contents row">
- <% @tweets.each do |tweet| %>
-      <div class="content_post" >
-          <p><%= tweet.text %></p>
-          <span class="name">
-          <%= tweet.name %>
-          </span>
-      </div>
- <% end %>
+  <% @tweets.each do |tweet| %>
+    <div class="content_post" >
+      <p><%= tweet.text %></p>
+        <%= image_tag tweet.image.variant(resize: '500x500'), class: 'tweet-image' if tweet.image.attached?%>
+        <%= link_to '削除', tweet_path(tweet.id),method: :delete %>
+      <span class="name">
+        <%= tweet.name %>
+      </span>
+      <<%= link_to '削除', tweet_path(tweet.id),method: :delete %>
+    </div>
+  <% end %>
 </div>
